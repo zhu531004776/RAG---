@@ -4,6 +4,7 @@ import streamlit as st
 from datetime import datetime, timedelta
 from html import escape
 import traceback
+from pathlib import Path
 
 from config import UPLOAD_DIR, ALLOWED_EXTENSIONS
 from models.document import Document, DocumentStore, ProcessStatus
@@ -255,6 +256,18 @@ if uploaded_files:
         try:
             # 保存文件
             file_path = UPLOAD_DIR / uploaded_file.name
+            
+            # 检查目录是否可写
+            if not UPLOAD_DIR.exists():
+                raise PermissionError(f"上传目录不存在: {UPLOAD_DIR}")
+            
+            try:
+                test_file = UPLOAD_DIR / ".temp_write_test"
+                test_file.write_text("test")
+                test_file.unlink()
+            except PermissionError:
+                raise PermissionError(f"上传目录无写入权限: {UPLOAD_DIR}")
+            
             with open(file_path, "wb") as f:
                 f.write(uploaded_file.getbuffer())
 
