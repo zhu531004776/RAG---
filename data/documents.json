@@ -1,0 +1,42 @@
+[
+  {
+    "doc_id": "3ab05709-3df9-4e1f-a142-92d4ade4cc57",
+    "file_name": "祝超单页简历2025.pdf",
+    "file_path": "d:\\TARE项目文件夹\\RAG知识库\\data\\uploads\\祝超单页简历2025.pdf",
+    "file_type": ".pdf",
+    "upload_time": "2026-06-16 11:59:34",
+    "status": "completed",
+    "chunk_count": 4,
+    "error_msg": null
+  },
+  {
+    "doc_id": "5ec8e2fa-2d90-4805-b3e9-d69415f0d76f",
+    "file_name": "README.md",
+    "file_path": "d:\\TARE项目文件夹\\RAG知识库\\data\\uploads\\README.md",
+    "file_type": ".md",
+    "upload_time": "2026-06-16 02:44:52",
+    "status": "completed",
+    "chunk_count": 2,
+    "error_msg": null
+  },
+  {
+    "doc_id": "c467fdb7-384c-4b21-8173-825cdafeadb4",
+    "file_name": "requirements.txt",
+    "file_path": "d:\\TARE项目文件夹\\RAG知识库\\data\\uploads\\requirements.txt",
+    "file_type": ".txt",
+    "upload_time": "2026-06-16 11:59:10",
+    "status": "completed",
+    "chunk_count": 1,
+    "error_msg": null
+  },
+  {
+    "doc_id": "0af3a07d-949f-4923-9b40-feb89d7e2c5b",
+    "file_name": "技术文档.md",
+    "file_path": "d:\\TARE项目文件夹\\RAG知识库\\data\\uploads\\技术文档.md",
+    "file_type": ".md",
+    "upload_time": "2026-06-16 02:56:26",
+    "status": "completed",
+    "chunk_count": 3,
+    "error_msg": null
+  }
+]

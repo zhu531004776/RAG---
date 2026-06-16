@@ -1,0 +1,22 @@
+# 轻量级RAG知识库MVP - 核心依赖
+
+# Web框架
+streamlit>=1.28.0
+
+# 文档解析
+python-docx>=1.1.0
+PyPDF2>=3.0.0
+markdown>=3.5
+
+# 向量化与向量库
+sentence-transformers>=2.2.0
+chromadb>=0.4.22
+
+# 大模型API支持（OpenAI兼容接口）
+openai>=1.0.0
+requests>=2.31.0
+
+# 工具库
+python-dotenv>=1.0.0
+tqdm>=2.2.0
+supabase>=2.5.0
