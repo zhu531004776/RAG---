@@ -4,6 +4,10 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
+# 某些部署环境会把 protobuf 升到过高版本，导致旧版依赖的 *_pb2.py 在运行时崩溃。
+# 优先使用官方建议的 Python 实现兜底，避免「智能问答」页在导入 Chroma 相关依赖时直接报错。
+os.environ.setdefault("PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION", "python")
+
 # 加载环境变量
 load_dotenv()
 

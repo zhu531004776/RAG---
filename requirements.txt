@@ -11,6 +11,7 @@ markdown>=3.5
 # 向量化与向量库
 sentence-transformers>=2.2.0
 chromadb>=0.4.22
+protobuf==3.20.3
 
 # 大模型API支持（OpenAI兼容接口）
 openai>=1.0.0
