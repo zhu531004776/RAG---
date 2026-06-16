@@ -13,12 +13,36 @@ load_dotenv()
 
 # ==================== 路径配置 ====================
 BASE_DIR = Path(__file__).parent
-DATA_DIR = BASE_DIR / "data"
+
+# Streamlit Cloud环境变量检查
+def get_data_dir():
+    """获取数据目录，优先使用环境变量配置或临时目录"""
+    # 检查环境变量配置
+    env_data_dir = os.getenv("DATA_DIR")
+    if env_data_dir:
+        return Path(env_data_dir)
+    
+    # 尝试使用当前目录下的data文件夹
+    local_data_dir = BASE_DIR / "data"
+    try:
+        local_data_dir.mkdir(exist_ok=True)
+        test_file = local_data_dir / ".write_test"
+        test_file.write_text("test")
+        test_file.unlink()
+        return local_data_dir
+    except (PermissionError, OSError):
+        pass
+    
+    # 回退到系统临时目录
+    import tempfile
+    return Path(tempfile.mkdtemp())
+
+DATA_DIR = get_data_dir()
 UPLOAD_DIR = DATA_DIR / "uploads"
 VECTOR_DB_DIR = DATA_DIR / "vector_db"
 
 # 确保数据目录存在
-DATA_DIR.mkdir(exist_ok=True)
+DATA_DIR.mkdir(parents=True, exist_ok=True)
 UPLOAD_DIR.mkdir(exist_ok=True)
 VECTOR_DB_DIR.mkdir(exist_ok=True)
 
