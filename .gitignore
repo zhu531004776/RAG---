@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+.dbg/
+.vercel/
+data/vector_db/
+data/uploads/
